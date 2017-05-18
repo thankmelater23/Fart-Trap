@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15G26a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--fart Selector vc-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="fart Selector vc" spacing="4" hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <separator alignment="left" id="lp7-84-kiG">
+                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <group width="136" height="39.5" alignment="left" animationDuration="1" id="O2W-nG-ljf">
+                            <items>
+                                <label width="134" height="45.5" alignment="left" verticalAlignment="bottom" text="Fart Remote" textAlignment="center" id="Bpi-2c-3el">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <button width="1" alignment="left" title="Button" id="av7-0q-trD"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Short Fart" id="ynu-Pl-r3J">
+                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="shortFart" destination="AgC-eL-Hgc" id="tt5-55-JrO"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Medium Fart" id="scO-8Q-B9c">
+                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="mediumFart" destination="AgC-eL-Hgc" id="5Tm-Pp-lmj"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Long Fart" id="ARK-A8-YTI">
+                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="longFart" destination="AgC-eL-Hgc" id="Sdt-eW-uGu"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="All Farts" id="tSp-gM-0fX">
+                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="allFart" destination="AgC-eL-Hgc" id="Vtw-y3-ZQr"/>
+                            </connections>
+                        </button>
+                        <separator alignment="left" id="Soo-zZ-Sd3">
+                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="933" y="158"/>
+        </scene>
+    </scenes>
+</document>
