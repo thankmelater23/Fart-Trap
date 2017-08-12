@@ -22,7 +22,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override init() {
         if(WCSession.isSupported()){
-            session = WCSession.default()
+            session = WCSession.default
         }else{
             session = nil
         }

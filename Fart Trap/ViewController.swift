@@ -45,7 +45,7 @@ class ViewController: UIViewController, FartType, WCSessionDelegate {
         fart.delegate = self
         
         if(WCSession.isSupported()){
-            session = WCSession.default()
+            session = WCSession.default
             self.session.delegate = self
             self.session.activate()
         }else{
@@ -58,7 +58,7 @@ class ViewController: UIViewController, FartType, WCSessionDelegate {
     required init?(coder aDecoder: NSCoder) {
         //        fatalError("init(coder:) has not been implemented")
         
-        self.session = WCSession.default()
+        self.session = WCSession.default
         
         super.init(coder: aDecoder)
     }
