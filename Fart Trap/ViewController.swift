@@ -88,7 +88,7 @@ class ViewController: UIViewController, FartType, WCSessionDelegate {
     }
     
     func tipAlert(){
-        let alert = UIAlertController(title: "Attention", message: "Please keep app in the foreground with the ringer on to enjoy fart trap", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Attention", message: "Please keep app in the foreground with the ringer on to enjoy fart trap", preferredStyle: UIAlertController.Style.alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         
