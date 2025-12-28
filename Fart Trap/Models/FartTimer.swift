@@ -79,11 +79,17 @@ class FartTimer {
     
     /// Stop the timer
     func stopTimer() {
+        guard isActive else {
+            print("⚠️ stopTimer called but timer wasn't active")
+            return
+        }
+        
+        print("🛑 Stopping FartTimer (isActive: \(isActive))")
         timer?.invalidate()
         timer = nil
         isActive = false
         countdown = 0
-        delegate?.timerDidCancel()
+        // Don't call delegate here - let the viewmodel handle state
     }
     
     /// Check if timer is running

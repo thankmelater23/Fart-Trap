@@ -226,7 +226,7 @@ class TimerViewModel: ObservableObject {
     
     func startTimer() {
         // Prevent multiple starts
-        guard !isTimerRunning else {
+        if isTimerRunning {
             print("⚠️ Timer already running, ignoring start request")
             return
         }
@@ -235,6 +235,8 @@ class TimerViewModel: ObservableObject {
             print("❌ FartTimer not initialized")
             return
         }
+        
+        print("🚀 Starting timer (mode: \(timerMode), category: \(selectedCategory), interval: \(intervals[selectedInterval].name))")
         
         let category: FartCategory
         switch selectedCategory {
@@ -257,12 +259,16 @@ class TimerViewModel: ObservableObject {
     }
     
     func cancelTimer() {
-        guard isTimerRunning else { return }
+        guard isTimerRunning else {
+            print("⚠️ Attempted to cancel timer but none was running")
+            return
+        }
         
+        print("🛑 Cancelling timer...")
         fartTimer?.stopTimer()
         isTimerRunning = false
         timeDisplay = "0:00"
-        print("🛑 Timer cancelled")
+        print("✅ Timer cancelled successfully")
     }
     
     // Sync state with timer if it's still running
@@ -287,6 +293,7 @@ extension TimerViewModel: FartTimerDelegate {
     }
     
     func timerDidComplete() {
+        print("⏰ Timer completed delegate called")
         DispatchQueue.main.async { [weak self] in
             self?.isTimerRunning = false
             self?.timeDisplay = "0:00"
@@ -294,9 +301,10 @@ extension TimerViewModel: FartTimerDelegate {
     }
     
     func timerDidCancel() {
+        print("⏰ Timer cancel delegate called")
         DispatchQueue.main.async { [weak self] in
-            self?.isTimerRunning = false
-            self?.timeDisplay = "0:00"
+            // Don't update state here if manually cancelled
+            // The cancelTimer() function already handles it
         }
     }
 }
